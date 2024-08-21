@@ -23,17 +23,17 @@ namespace MyQ_ABot
 
 
 
-            // Translator klient
+            // Skapar en Translator klient
+
             TextTranslationClient translatorClient = new TextTranslationClient(
                 new AzureKeyCredential(translatorKey),
                 new Uri(translatorEndpoint)
             );
 
-            // BOT klient
+            // Samt en BOT klient
 
             Uri endpoint = new Uri(qnaEndpoint);
             AzureKeyCredential credential = new AzureKeyCredential(qnaKey);
-
 
             QuestionAnsweringClient client = new QuestionAnsweringClient(endpoint, credential);
             QuestionAnsweringProject project = new QuestionAnsweringProject(projectName, deploymentName);
@@ -45,16 +45,15 @@ namespace MyQ_ABot
             {
 
                 Console.Write("Me: ");
-
+                // Tar emot en fråga på valfritt språk
                 string question = Console.ReadLine();
-
+                // Översätter frågan till engelska med metoden TranslateTextAsync
                 string translatedQuestion = await TranslateTextAsync(translatorClient, question);
-
+                //Tar emot ett svar en det kommer som ett paket
                 Response<AnswersResult> response = client.GetAnswers(translatedQuestion, project);
-
+                // Så måste loopa då det ligger som en generic lista,då vill jag få ut VÄRDET och ANSWERS
                 foreach (KnowledgeBaseAnswer answer in response.Value.Answers)
                 {
-
                     Console.WriteLine($"RoxBot: {answer.Answer}");
                 }
 
@@ -62,6 +61,7 @@ namespace MyQ_ABot
             }
         }
 
+        // Gör en metod som tar emot en tranlator klient samt den text jag vill få översatt till engelska åt min bot
         static async Task<string> TranslateTextAsync(TextTranslationClient translatorClient, string text)
         {
             string targetLanguage = "en";

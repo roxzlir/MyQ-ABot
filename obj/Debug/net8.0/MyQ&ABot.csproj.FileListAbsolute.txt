@@ -28,3 +28,4 @@ C:\Users\emilc\source\repos\MyQ&ABot\obj\Debug\net8.0\refint\MyQ&ABot.dll
 C:\Users\emilc\source\repos\MyQ&ABot\obj\Debug\net8.0\MyQ&ABot.pdb
 C:\Users\emilc\source\repos\MyQ&ABot\obj\Debug\net8.0\MyQ&ABot.genruntimeconfig.cache
 C:\Users\emilc\source\repos\MyQ&ABot\obj\Debug\net8.0\ref\MyQ&ABot.dll
+C:\Users\emilc\source\repos\MyQ&ABot\obj\Debug\net8.0\MyQ&ABot.sourcelink.json

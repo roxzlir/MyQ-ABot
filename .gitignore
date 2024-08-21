@@ -1,4 +1,17 @@
 
 # Ignorera konfigurationsfiler med hemligheter och API-nycklar
 appsettings.json
+# Ignorera användarspecifika filer
+*.user
+*.suo
+
+# Ignorera build-artifakter
+bin/
+obj/
+
+# Ignorera Visual Studio-specifika filer
 .vs/
+.vscode/
+
+# Ignorera publicerade filer och paket
+publish/

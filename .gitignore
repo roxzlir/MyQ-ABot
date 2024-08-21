@@ -1,0 +1,3 @@
+
+# Ignorera konfigurationsfiler med hemligheter och API-nycklar
+appsettings.json
